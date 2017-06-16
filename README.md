@@ -28,3 +28,4 @@ optional arguments:
 # To Do
 * Prettify and improve generally
 * Implement systemd service
+* reintroduce support for JSON collection
