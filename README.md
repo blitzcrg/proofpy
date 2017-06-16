@@ -1,33 +1,41 @@
 # proofpy
 
-A hacked-together shim to pull syslog data from the ProofPoint TAP API
+```
+usage: proofpy.py [-h] [-s [60-3600]] [-c {issues,all}] [-t [1-65535]]
+                  [--show]
+                  principal secret sysloghost
+```
 
-#Requires
+positional arguments:
 
-requests
+  principal             Your ProofPoint API User Principal ID
 
-#Usage
+  secret                Your ProofPoint API User Secret
 
-proofpy.py userprincipal usersecret sysloghost -s seconds -c category -t port --show
+  sysloghost            The hostname or IP address of the destination syslog
 
-userprincipal: Your proofpoint API principal
+                        server
 
-usersecret: Your proofpoint API secret
+optional arguments:
 
-sysloghost: IP address or hostname of your SIEM/syslog server
+  -h, --help            show this help message and exit
 
--s: Interval in seconds (60-3600). Defaults to 300.
+  -s [60-3600], --seconds [60-3600]
 
--c: Category. Valid choices are 'issues' and 'all'. Default is 'issues'
+                        Number of seconds [60-3600] worth of events up to
+                        right now to retrieve. Default: 300.
 
--t: Syslog port. Default is 514.
+  -c {issues,all}, --category {issues,all}
 
---show: Print output to console instead of forwarding to a syslog server.
+                        API category. Valid arguments are 'issues' or 'all'.
+                        Default: issues.
 
-Currently, has to be automated with cron/task scheduler. 
+  -t [1-65535], --port [1-65535]
 
-#TODO
+                        Syslog destination port [1-65535]. Default: 514.
 
-Rewrite to support execution as a systemd service
+  --show                Print to console instead of sending as syslog.
 
-Cleanup & prettify
+# To Do
+* Prettify and improve generally
+* Implement systemd service
