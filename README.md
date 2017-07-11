@@ -24,8 +24,10 @@ optional arguments:
   --show                Print to console instead of sending as syslog.
 
 ```
+# mailtap
 
-# To Do
-* Prettify and improve generally
-* Implement systemd service
-* reintroduce support for JSON collection
+The notification output script that triggers whenever my SIEM sees a relevant
+event in order to automatically notify the offending user they may be
+compromised. Modify parameters in the main method to suit your environment.
+Works with RSA Netwitness - support for other SIEM platforms will depend on
+you.
