@@ -1,5 +1,7 @@
 # proofpy
 
+I no longer have access to a Proofpoint TAP API endpoint to verify whether this code still works, so use with caution. 
+
 ```
 usage: proofpy.py [-h] [-s [60-3600]] [-c {issues,all}] [-t [1-65535]]
                   [--show]
